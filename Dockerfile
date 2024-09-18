@@ -1,5 +1,5 @@
 # Usando uma imagem base (pode ser a que preferir, por exemplo, openjdk para Java projects)
-FROM openjdk:11-jdk-slim
+FROM alpine:3.10
 
 # Definir a versão do Sonar Scanner que você deseja instalar
 ENV SONAR_SCANNER_VERSION=4.8.0.2856
