@@ -1,5 +1,18 @@
-#!/bin/sh -l
+#!/bin/sh 
 
-echo "Hello $1"
-time=$(date)
-echo "time=$time" >> $GITHUB_OUTPUT
+set -e
+
+projectKey=$1
+sources=$2
+url=$3
+login=$4
+version=$5
+binaries=$6
+
+sonar-scanner \
+            -Dsonar.projectKey=$projectKey \
+            -Dsonar.sources=$sources \
+            -Dsonar.host.url=$url \
+            -Dsonar.login=$login \
+            -Dsonar.version=$version \
+            -Dsonar.java.binaries=$binaries
